@@ -1,0 +1,16 @@
+{% extends 'base/main.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="project-section">
+    <div class="container">
+        <img class="img-responsive" src="{{project.thumbnail.url}}" alt="project-image">
+        <h3 class="common-heading">{{project.title}}</h3>
+        <a href="{% url 'edit-project' project.id %}" class="btn">Edit</a>
+        <hr>
+        <p>{{project.body|safe}}</p>
+    </div>
+</section>
+
+{% endblock content %}

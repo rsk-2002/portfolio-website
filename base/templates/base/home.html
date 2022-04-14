@@ -1,0 +1,87 @@
+{% extends 'base/main.html' %}
+{% load static %}
+{% block content %}
+<header class="header-section">
+    <div class="container">
+        <section class="hero-section">
+            <img src="{% static 'images/photo2.jpg' %}" alt="my-image">
+            <h1>Ravi <br>Shanker <br>Kushwaha</h1>
+        </section>
+        <div class="details">
+            <h3>Web Developer and ML enthusiast</h3>
+            <p>I teach people how to code and build cool things.</p>
+        </div>
+    </div>
+</header>
+
+<section class="project-section section">
+    <div class="container">
+        <h3 class="common-heading">My Projects</h3>
+        <div class="d-grid grid-three-column">
+
+            {% for project in projects %}
+            <div class="project-wrapper">
+                <a href="{% url 'project' project.id %}">
+                    <img src="{{project.thumbnail.url}}" alt="{{project.title}}">
+                    <h4>{{project.title|title}}</h4>
+                </a>
+            </div>
+            {% empty %}
+            <p>No Projects available in database</p>
+            {% endfor %}
+            
+        </div>
+    </div>
+</section>
+
+<section class="about-section section">
+    <div class="container">
+        <h3 class="common-heading">More about me</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus neque doloremque accusantium
+            veritatis doloribus, sed impedit a possimus necessitatibus facere.
+        </p>
+        <p>Lorem ipsum sit amet consectetur adipisicing elit. Voluptatibus neque doloremque accusantium
+            veritatis doloribus, sed impedit a possimus necessitatibus facere.
+        </p>
+    </div>
+</section>
+
+
+<!-- Skill Section -->
+
+<section class="skill-section section">
+    <div class="sub-container">
+        <h3 class="common-heading">Skills</h3>
+
+        {% for skill in detailedSkills %}
+        <div class="skill-wrapper">
+            <h4 class="skill-name">{{skill.title}}</h4>
+            <p>{{skill.body}}</p>
+        </div>
+        {% empty %}
+        <p>No skills added in database</p>
+        {% endfor %}
+
+        <div class="other-skills-wrapper">
+            {% for skill in skills %}
+            <span class="other-skills">{{skill.title}}</span>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="contact-section section">
+    <div class="sub-container">
+        <h3 class="common-heading">Contact me</h3>
+        <form action="">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+
+            <label for="message">Message</label>
+            <textarea name="message" id="message" cols="30" rows="10"></textarea>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</section>
+{% endblock content %}

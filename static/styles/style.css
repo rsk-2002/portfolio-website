@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+.section {
+    max-width: 100%;
+    padding: 2rem 1rem;
+}
+.container {
+    max-width: 100%;
+    width: 1000px;
+    margin: 0 auto;
+    padding: 1rem 0.5rem;
+}
+.sub-container {
+    max-width: 100%;
+    width: 600px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+.common-heading {
+    font-size: 2rem;
+    font-weight: bold;
+}
+.img-responsive {
+    width: 100%;
+}
+
+
+/* Header Section CSS */
+
+
+.header-section {
+    background-color: #1F2428;
+}
+
+nav {
+    padding: 1rem;
+    background-color: #191919;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    padding: 0 1rem;
+}
+
+nav ul li a {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: rgb(189, 187, 187);
+}
+
+nav ul li a:hover,
+nav ul li a:active {
+    transition: all 0.3s linear;
+    color: white;
+}
+
+.hero-section {
+    padding: 3rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    color: white;
+}
+
+.hero-section img {
+    border: 3px solid #efafaf;
+    border-radius: 50%;
+}
+
+.hero-section h1 {
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 100px;
+}
+
+.details {
+    text-align: center;
+    color: white;
+}
+
+.details h3 {
+    font-size: 3rem;
+}
+
+.details p {
+    font-size: 1.2rem;
+    padding: 1rem;
+}
+
+/* Project Section CSS */
+
+
+
+.project-section {
+    background-color: #e5e5e5;
+}
+
+.d-flex {
+    padding: 3rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.d-grid {
+    display: grid;
+}
+.grid-three-column {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.project-wrapper {
+    background-color: white;
+}
+.project-wrapper img {
+    width: 100%;
+}
+.project-wrapper h4 {
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 1rem;
+    color: black;
+    font-weight: lighter;
+}
+
+/* About Section CSS */
+
+.about-section {
+    background-color: #e5e5e5;
+}
+.about-section p {
+    padding: 1rem 0;
+}
+p {
+    line-height: 1.5rem;
+}
+
+
+/* Skill Section CSS */
+
+.skill-wrapper {
+    padding: 2rem 0;
+}
+
+.skill-name {
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 3rem;
+}
+
+.skill-wrapper p {
+    word-spacing: 5px;
+}
+
+.other-skills-wrapper {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.other-skills {
+    padding: 0.6rem 1rem;
+    background-color: lightblue;
+    font-weight: 1.1rem;
+    border-radius: 2rem;
+}
+
+
+
+/* Contact FOrm CSS */
+
+
+.contact-section {
+    padding: 3rem 0;
+    background-color: #e5e5e5;
+}
+
+form label {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 300;
+    padding: 1rem 0;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    padding: 0.5rem;
+    width: 100%;
+    border: 1px solid #efafaf;
+    outline: none;
+    font-size: 1.2rem;
+    resize: none;
+}
+
+form input[type="submit"] {
+    margin: 2rem 0;
+    padding: 0.5rem;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 300;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+}
+
+
+/* For Medium Devices and Mobile */
+@media screen and (max-width:768px) {
+    .grid-three-column {
+        grid-template-columns: 1fr;
+    } 
+    .project-wrapper {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    .hero-section h1 {
+        text-align: center;
+    }
+}
+
+
+/* For Jio Small Keypad Mobile */
+@media screen and (max-width:468px) {
+    .hero-section img {
+        width: 50%;
+    }
+    .hero-section h1 {
+        font-size: 3rem;
+        line-height: 4rem;
+        text-align: center;
+    }
+
+}
