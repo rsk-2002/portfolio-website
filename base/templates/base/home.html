@@ -73,12 +73,17 @@
 <section class="contact-section section">
     <div class="sub-container">
         <h3 class="common-heading">Contact me</h3>
-        <form action="">
-            <label for="email">Email</label>
+        <form action="" method="post">
+            {% csrf_token %}
+            <!-- <label for="email">Email</label>
             <input type="email" name="email" id="email">
 
             <label for="message">Message</label>
-            <textarea name="message" id="message" cols="30" rows="10"></textarea>
+            <textarea name="message" id="message" cols="30" rows="10"></textarea> -->
+            {% for field in form %}
+            <label for="">{{field.label}}</label>
+            {{field}}
+            {% endfor %}
 
             <input type="submit" value="Submit">
         </form>

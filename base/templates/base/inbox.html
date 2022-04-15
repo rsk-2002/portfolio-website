@@ -1,0 +1,37 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+<section class="section section-inbox">
+    <div class="container">
+        <h3 class="common-heading">My Messages</h3>
+        <h5>Unread Messages: ({{unreadCount}})</h5>
+
+        <table class="table" style="width: 100%;text-align: left;">
+            <thead>
+                <tr>
+                    <th>Sender</th>
+                    <th>Subject</th>
+                    <th>Date send</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for message in inbox %}
+
+
+                {% if message.is_read %}
+                <tr>
+                    {% else %}
+                <tr style="font-weight:900;">
+                    {% endif %}
+                    <td><a href="{% url 'message' message.id %}">{{message.name}}</a></td>
+                    <td>{{message.subject}}</td>
+                    <td>{{message.created}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+
+{% endblock content %}
