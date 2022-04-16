@@ -70,6 +70,25 @@
     </div>
 </section>
 
+
+<section class="skill-section section">
+    <div class="sub-container">
+        <h3 class="common-heading">Endorsement</h3>
+        <a href="{% url 'add-endorsement' %}" class="btn">Add Endorsement</a>
+
+        {% for i in endorsement %}
+        <div class="skill-wrapper">
+            <h4 class="skill-name">{{i.name}}</h4>
+            <p>{{i.body}}</p>
+        </div>
+        {% empty %}
+        <p>No endorsement added in database</p>
+        {% endfor %}
+    </div>
+</section>
+
+
+
 <section class="contact-section section">
     <div class="sub-container">
         <h3 class="common-heading">Contact me</h3>
