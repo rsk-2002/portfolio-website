@@ -55,8 +55,13 @@
 
         {% for skill in detailedSkills %}
         <div class="skill-wrapper">
-            <h4 class="skill-name">{{skill.title}}</h4>
-            <p>{{skill.body}}</p>
+            {% if skill.logo %}
+            <img  class="logo-img" src="{{skill.logo.url}}" alt="logo">
+            {% endif %}
+            <div>
+                <h4 class="skill-name">{{skill.title}}</h4>
+                <p>{{skill.body}}</p>
+            </div>
         </div>
         {% empty %}
         <p>No skills added in database</p>
@@ -71,7 +76,10 @@
 </section>
 
 
-<section class="skill-section section">
+<!-- Endorsement Section -->
+
+
+<section class="endorsement-section section">
     <div class="sub-container">
         <h3 class="common-heading">Endorsement</h3>
         <a href="{% url 'add-endorsement' %}" class="btn">Add Endorsement</a>
@@ -94,11 +102,7 @@
         <h3 class="common-heading">Contact me</h3>
         <form action="" method="post">
             {% csrf_token %}
-            <!-- <label for="email">Email</label>
-            <input type="email" name="email" id="email">
 
-            <label for="message">Message</label>
-            <textarea name="message" id="message" cols="30" rows="10"></textarea> -->
             {% for field in form %}
             <label for="">{{field.label}}</label>
             {{field}}

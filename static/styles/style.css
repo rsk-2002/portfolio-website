@@ -165,6 +165,16 @@ p {
     line-height: 3rem;
 }
 
+.skill-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.skill-wrapper .logo-img {
+    width: 15%;
+    height: 15%;
+    margin-right: 2rem;
+}
 .skill-wrapper p {
     word-spacing: 5px;
 }
