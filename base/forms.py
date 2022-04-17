@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import Project, Message, Skill, Endorsement, Comment
+from .models import Project, Message, Skill, Endorsement, Comment, Question
 
 
 class ProjectForm(ModelForm):
@@ -29,3 +29,8 @@ class CommentForm(ModelForm):
     class Meta:
         model = Comment
         fields = ['name', 'body']
+
+class QuestionForm(ModelForm):
+    class Meta:
+        model = Question
+        fields = ['answer']
