@@ -82,11 +82,11 @@
 <section class="endorsement-section section">
     <div class="sub-container">
         <h3 class="common-heading">Endorsement</h3>
-        <a href="{% url 'add-endorsement' %}" class="btn">Add Endorsement</a>
+        <a href="{% url 'add-endorsement' %}" class="mt-2 btn">Add Endorsement</a>
 
         {% for i in endorsement %}
-        <div class="skill-wrapper">
-            <h4 class="skill-name">{{i.name}}</h4>
+        <div class="endorsement-wrapper">
+            <h4 class="endorsement-name">{{i.name}}</h4>
             <p>{{i.body}}</p>
         </div>
         {% empty %}
@@ -97,7 +97,7 @@
 
 
 
-<section class="contact-section section">
+<section class="contact-section section" id="contact-page">
     <div class="sub-container">
         <h3 class="common-heading">Contact me</h3>
         <form action="" method="post">

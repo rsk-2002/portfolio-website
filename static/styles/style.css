@@ -6,6 +6,9 @@
     font-family: "Roboto", sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
 a {
     text-decoration: none;
 }
@@ -31,6 +34,18 @@ a {
 }
 .img-responsive {
     width: 100%;
+}
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #1F2428;
+    color: #e5e5e5;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+}
+.mt-2 {
+    margin-top: 2rem;
 }
 
 
@@ -159,7 +174,7 @@ p {
     padding: 2rem 0;
 }
 
-.skill-name {
+.skill-name, .endorsement-name {
     font-size: 1.4rem;
     font-weight: 500;
     line-height: 3rem;
@@ -193,6 +208,16 @@ p {
     font-weight: 1.1rem;
     border-radius: 2rem;
 }
+
+/* Endorsement Section CSS */
+
+.endorsement-wrapper {
+    background-color: aliceblue;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    margin: 2rem 0;
+}
+
 
 
 
@@ -236,6 +261,77 @@ form input[type="submit"] {
     outline: none;
     cursor: pointer;
 }
+
+/* Inbox Page CSS */
+
+table, thead, tbody {
+    width: 100%;
+    text-align: left;
+}
+tbody tr:hover {
+    background-color: aliceblue;
+}
+th, td {
+    padding: 1rem;
+} 
+
+/* Message on Main Page CSS */
+
+.messages {
+    list-style-type: none;
+    background-color: #efafaf;
+}
+.messages li {
+    position: fixed;
+    top: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: aliceblue;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+}
+
+/* Project Page Comment Box CSS */
+
+.comment-card {
+    background-color: aliceblue;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem 2rem;
+}
+.card-body h5 {
+    display: inline-block;
+    background-color: rgb(94, 202, 216);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    margin: 0.5rem 0;
+}
+.card-body span {
+    font-size: 0.8rem;
+}
+.card-body p {
+    background-color: #e5e5e5;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+/* Donation Page CSS */
+
+.donation-wrapper {
+    display: grid;
+    place-items: center;
+    padding: 2rem;
+}
+#paypal-button-container {
+    width: 300px;
+}
+.donation-wrapper p {
+    margin: 1rem 0;
+}
+
+
+
+
 
 
 /* For Medium Devices and Mobile */

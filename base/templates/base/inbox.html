@@ -6,7 +6,7 @@
         <h3 class="common-heading">My Messages</h3>
         <h5>Unread Messages: ({{unreadCount}})</h5>
 
-        <table class="table" style="width: 100%;text-align: left;">
+        <table class="table">
             <thead>
                 <tr>
                     <th>Sender</th>
@@ -17,14 +17,12 @@
 
             <tbody>
                 {% for message in inbox %}
-
-
                 {% if message.is_read %}
                 <tr>
                     {% else %}
                 <tr style="font-weight:900;">
                     {% endif %}
-                    <td><a href="{% url 'message' message.id %}">{{message.name}}</a></td>
+                    <td title="Click to Open"><a href="{% url 'message' message.id %}">{{message.name}}</a></td>
                     <td>{{message.subject}}</td>
                     <td>{{message.created}}</td>
                 </tr>

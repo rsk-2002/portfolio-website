@@ -1,8 +1,8 @@
 <nav>
     <ul>
         <li><a href="{% url 'home' %}">Projects</a></li>
-        <li><a href="#">Courses</a></li>
-        <li><a href="#">Contact</a></li>
+        <!-- <li><a href="#">Courses</a></li> -->
+        <li><a href="/#contact-page">Contact</a></li>
         <li><a href="{% url 'donation' %}">Buy me a coffee</a></li>
         <li><a href="{% url 'chart' %}">Vote</a></li>
         {% if request.user.is_authenticated %}

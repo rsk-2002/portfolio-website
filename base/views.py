@@ -17,6 +17,7 @@ def homePage(request):
         if form.is_valid():
             form.save()
             messages.success(request, "Your message was successfully sent.")
+            return redirect('home')
 
     context = {"projects": projects, "detailedSkills": detailedSkills, "skills": skills, "form": form, "endorsement":endorsement}
     return render(request, 'base/home.html', context)
@@ -36,6 +37,7 @@ def projectPage(request, pk):
             comment.project = project
             comment.save()
             messages.success(request, "Your comment was successfully added.")
+            return redirect('project', project.id)
 
 
 
@@ -64,14 +66,14 @@ def editProject(request, pk):
         form = ProjectForm(request.POST, request.FILES, instance=project)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            return redirect('project', project.id)
 
     context = {"form": form}
     return render(request, 'base/project_form.html', context)
 
 
 def inboxPage(request):
-    inbox = Message.objects.all().order_by('is_read')
+    inbox = Message.objects.all().order_by('is_read', '-created')
     unreadCount = Message.objects.filter(is_read=False).count()
 
     return render(request, 'base/inbox.html', {"inbox":inbox, "unreadCount": unreadCount})
